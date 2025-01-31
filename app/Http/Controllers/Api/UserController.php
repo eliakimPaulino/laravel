@@ -78,9 +78,9 @@ class UserController extends Controller
             }
 
             // 144. Backend and modify users table part 9 correction:
-            // $accessToken = $user->createToken(uniqid())->plainTextToken;
-            // $user->access_token = $accessToken;
-            // User::where('open_id', '=', $validated['open_id'])->update(['access_token' => $accessToken]);
+            $accessToken = $user->createToken(uniqid())->plainTextToken;
+            $user->access_token = $accessToken;
+            User::where('open_id', '=', $validated['open_id'])->update(['access_token' => $accessToken]);
 
             return response()->json([
                 'code' => 200,

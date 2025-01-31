@@ -28,24 +28,19 @@ class UserController extends AdminController
         $grid = new Grid(new User());
 
         $grid->column('id', __('Id'));
-        $grid->column('token', __('Token'))->display(function ($token) {
-            return Str::limit($token, 10, '...');});
+        $grid->column('token', __('Token'))->display(function ($token) {return Str::limit($token, 10, '...');});
         $grid->column('name', __('Name'));
         $grid->column('email', __('Email'));
         $grid->column('email_verified_at', __('Email verified at'));
         $grid->column('avatar', __('Avatar'));
         $grid->column('type', __('Type'));
         $grid->column('open_id', __('Open id'));
-        $grid->column('access_token', __('Access token'))->display(function ($token) {
-            return Str::limit($token, 10, '...');});
-        $grid->column('deleted_at', __('Deleted at'))->display(function ($token) {
-            return Str::limit($token, 10, '...');});
+        $grid->column('access_token', __('Access token'))->display(function ($token) {return Str::limit($token, 10, '...');});
+        $grid->column('deleted_at', __('Deleted at'))->display(function ($token) {return Str::limit($token, 10, '...');});
         $grid->column('phone', __('Phone'));
         $grid->column('remember_token', __('Remember token'));
-        $grid->column('created_at', __('Created at'))->display(function ($token) {
-            return Str::limit($token, 10, '...');});
-        $grid->column('updated_at', __('Updated at'))->display(function ($token) {
-            return Str::limit($token, 10, '...');});
+        $grid->column('created_at', __('Created at'))->display(function ($token) {return Str::limit($token, 10, '...');});
+        $grid->column('updated_at', __('Updated at'))->display(function ($token) {return Str::limit($token, 10, '...');});
 
         $grid->disableActions();
         $grid->disableCreateButton();
