@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Course;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
@@ -16,5 +16,9 @@ class CourseController extends Controller
             'msg' => 'My course list is here',
             'data' => $result,
         ], 200);
+        // return response()->json([
+        //     'user' => Auth::user(),
+        //     'message' => Auth::check() ? 'Usuário autenticado' : 'Usuário não autenticado'
+        // ]);
     }
 }

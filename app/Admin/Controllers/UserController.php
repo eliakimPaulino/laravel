@@ -4,10 +4,12 @@ namespace App\Admin\Controllers;
 
 use App\Models\User;
 use Encore\Admin\Controllers\AdminController;
+use Illuminate\Support\Str;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
-use Illuminate\Support\Str;
+
+//  this grid is for the http://192.168.0.104:8000/admin/users page.
 
 class UserController extends AdminController
 {
@@ -16,7 +18,7 @@ class UserController extends AdminController
      *
      * @var string
      */
-    protected $title = 'User';
+    protected $title = 'Members';
 
     /**
      * Make a grid builder.

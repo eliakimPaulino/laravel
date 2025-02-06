@@ -14,7 +14,7 @@ class CourseTypeController extends AdminController
 
     public function index(Content $content) {
         $tree = new Tree(new CourseType());
-        return $content->header('Course Type')->body($tree);
+        return $content->header('Course Types')->body($tree);
     }
 
 
@@ -37,10 +37,10 @@ class CourseTypeController extends AdminController
     {
         $form = new Form(new CourseType());
 
-        $form->select('parent_id', __('Parent category'))->options(CourseType::selectOptions());
-        $form->text('title', __('Title'));
+        $form->select  ('parent_id', __('Parent category'))->options(CourseType::selectOptions());
+        $form->text    ('title', __('Title'));
         $form->textarea('description', __('Description'));
-        $form->number('order', __('Order'));
+        $form->number  ('order', __('Order'));
 
 
         return $form;
